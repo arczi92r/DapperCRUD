@@ -19,8 +19,7 @@ namespace ConsoleApp1
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 // select person 
-                var person =
-                     con.Query<Person>(Query.GetPerson_AdressFULL).AsEnumerable();
+                var person = con.Query<Person>(Query.GetPerson_AdressFULL).AsEnumerable();
 
 
                 var person_adress =
