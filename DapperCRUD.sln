@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "ConsoleApp1\Client.csproj", "{6F124F59-A6F5-487E-A10D-9FC3340F9C5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constans.DBRepo", "Constans.DBRepo\Constans.DBRepo.csproj", "{5108C524-8224-492F-A352-C2BDC270857F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constans.DB.Repository", "Constans.DBRepo\Constans.DB.Repository.csproj", "{5108C524-8224-492F-A352-C2BDC270857F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB.Repository", "DB.Repository\DB.Repository.csproj", "{95E40C5F-A673-450F-94BF-7BB2B3F1D680}"
 EndProject

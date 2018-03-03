@@ -4,7 +4,7 @@ namespace DB.Repository
 {
     public interface IRepository<T> : IReadOnlyRepository<T>
     {
-        void Add(T item);
+         void  Add(T item);
 
         void Remove(T item);
 

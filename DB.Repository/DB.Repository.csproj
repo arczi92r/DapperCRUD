@@ -50,12 +50,13 @@
     <Compile Include="Entity\BusinessEntity.cs" />
     <Compile Include="Entity\Person.cs" />
     <Compile Include="Entity\Technologie.cs" />
+    <Compile Include="PersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Constans.DBRepo\Constans.DBRepo.csproj">
+    <ProjectReference Include="..\Constans.DBRepo\Constans.DB.Repository.csproj">
       <Project>{5108c524-8224-492f-a352-c2bdc270857f}</Project>
-      <Name>Constans.DBRepo</Name>
+      <Name>Constans.DB.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

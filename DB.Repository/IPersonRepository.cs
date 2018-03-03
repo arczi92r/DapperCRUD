@@ -1,7 +1,9 @@
-﻿
+﻿using Entity;
+
 namespace DB.Repository
 {
-    interface IPersonRepository : IRepository<Person>
+    public interface IPersonRepository : IRepository<Person>
     {
+        Person FindByUserID(int personID);
     }
 }
