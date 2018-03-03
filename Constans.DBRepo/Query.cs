@@ -1,15 +1,14 @@
 ﻿namespace Constans.DBRepo
 {
-    public  static class Query
+    public static class Query
     {
         public const string getDate = @"SELECT getdate()";
-        public const string GetPerson_AdressFULL = @"
+        public const string GetPerson_AdressFULL = @"SELECT be.BusinessEntityID FROM Person.Person p LEFT JOIN Person.BusinessEntity be ON p.BusinessEntityID = be.BusinessEntityID";
 
-SELECT be.BusinessEntityID
- FROM Person.Person p	LEFT JOIN Person.BusinessEntity be ON p.BusinessEntityID = be.BusinessEntityID
-";
+        public const string getPerson = @"  SELECT * FROM Person p JOIN Adres a  ON P.IDPerson = A.PersonID";
 
-        
-      
+
+        //p.Name , a.pERSONidaaa  , a.City
+
     }
 }

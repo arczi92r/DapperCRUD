@@ -14,33 +14,34 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string connectionString =
-           @"Data Source=ACER\MSSQLSERVER2016;Initial Catalog=AdventureWorks2014;Integrated Security=true";
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                // select person 
-                var person = con.Query<Person>(Query.GetPerson_AdressFULL).AsEnumerable();
+          //  string connectionStringAW =
+          // @"Data Source=ACER\MSSQLSERVER2016;Initial Catalog=AdventureWorks2014;Integrated Security=true";
+          //  string connectionStringArek=
+          //@"Data Source=ACER\MSSQLSERVER2016;Initial Catalog=Arek;Integrated Security=true";
+          //  using (SqlConnection con = new SqlConnection(connectionStringArek))
+          //  {
+          //      // select person 
+          //     // var person = con.Query<Person>(Query.GetPerson_AdressFULL).AsEnumerable();
 
 
-                var person_adress =
-                 con.Query<Person, BusinessEntity, Person >(Query.GetPerson_AdressFULL, (z, businessEntity) => {
-                     z.BusinessEntitya = businessEntity;
-                     return z;
+          //      var person_adress =
+          //       con.Query<Person, Adres, Person >(Query.getPerson, (z, a) => {
+          //           z.Adres = a;
+          //           return z;
 
-                 }, commandType: CommandType.Text, splitOn: "be.BusinessEntityID").ToList();
-
-
+          //       }, splitOn: "IDA").ToList();
 
 
-                foreach (var item in person)
-                {
 
-                    Console.WriteLine(item.FirstName);
-                    Console.WriteLine(item.BusinessEntitya.ModifiedDate);
 
-                }
+          //      foreach (var item in person_adress)
+          //      {
 
-            }
+          //          Console.WriteLine(item.Adres.City);
+                  
+          //      }
+
+          //  }
             Console.ReadKey();
         }
     }
