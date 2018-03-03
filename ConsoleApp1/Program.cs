@@ -23,9 +23,9 @@ namespace ConsoleApp1
 
 
                 var person_adress =
-                 con.Query<Person, BusinessEntity, Person >(Query.GetPerson_AdressFULL, (p, businessEntity) => {
-                     p.BusinessEntitya = businessEntity;
-                     return p;
+                 con.Query<Person, BusinessEntity, Person >(Query.GetPerson_AdressFULL, (z, businessEntity) => {
+                     z.BusinessEntitya = businessEntity;
+                     return z;
 
                  }, commandType: CommandType.Text, splitOn: "be.BusinessEntityID").ToList();
 
