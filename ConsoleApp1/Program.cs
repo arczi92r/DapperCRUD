@@ -17,7 +17,8 @@ namespace ConsoleApp1
             PersonRepository pr = new PersonRepository();
             
             Console.WriteLine(pr.FindByUserID(12).Name);
-            Console.ReadKey();
+            Console.ReadKey();  
+            //
            
         }
     }
