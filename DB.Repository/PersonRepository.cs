@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using Entity;
 using Dapper;
@@ -12,31 +11,36 @@ namespace DB.Repository
     public class PersonRepository : IPersonRepository
     {
 
-          string connectionStringArek =@"Data Source=ACER\MSSQLSERVER2016;Initial Catalog=Arek;Integrated Security=true";
-        public IDbConnection Connection
+        string connectionStringArek =@"Data Source=ACER\MSSQLSERVER2016;Initial Catalog=Arek;Integrated Security=true";
+        public IDbConnection Connection = null;
+        //    get
+        //    {
+        //        return
+        //            new SqlConnection(connectionStringArek);
+        //    }
+        //}
+        public PersonRepository(IDbConnection connection)
         {
-            get
-            {
-                return
-                    new SqlConnection(connectionStringArek);
-            }
+
+            this.Connection = connection;
         }
-        void IRepository<Person>.Add(Person item)
+
+        public void Add(Person item)
         {
             throw new NotImplementedException();
         }
 
-        void IRepository<Person>.Delete(Guid id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        Person IReadOnlyRepository<Person>.FindById(Guid id)
+        public Person FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-       public Person FindByUserID(int personID)
+        public Person FindByUserID(int personID)
         {
             var person = new Person();
             using (IDbConnection con = Connection)
@@ -49,17 +53,17 @@ namespace DB.Repository
             return person;
         }
 
-        IEnumerable<Person> IReadOnlyRepository<Person>.GetAll()
+        public IEnumerable<Person> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        void IRepository<Person>.Remove(Person item)
+        public void Remove(Person item)
         {
             throw new NotImplementedException();
         }
 
-        void IRepository<Person>.Update(Person item)
+        public void Update(Person item)
         {
             throw new NotImplementedException();
         }
