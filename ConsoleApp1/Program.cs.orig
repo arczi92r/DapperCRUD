@@ -1,6 +1,9 @@
 ﻿using System;
+<<<<<<< HEAD
+=======
 using System.Data;
 using System.Data.SqlClient;
+>>>>>>> master
 using DB.Repository;
 
 namespace ConsoleApp1
@@ -24,8 +27,12 @@ namespace ConsoleApp1
             PersonRepository pr = new PersonRepository(sql);
             
             Console.WriteLine(pr.FindByUserID(12).Name);
+<<<<<<< HEAD
+            Console.ReadKey();  
+=======
             
             Console.ReadKey();
+>>>>>>> master
            
         }
     }
