@@ -1,1 +1,2 @@
 wow commit chery pick migrate !!!
+zmiana ze zdalnego repo
