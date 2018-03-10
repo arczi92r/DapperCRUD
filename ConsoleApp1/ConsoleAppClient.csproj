@@ -50,9 +50,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DB.Repository\Dapper.DB.Repository.csproj">
-      <Project>{95e40c5f-a673-450f-94bf-7bb2b3f1d680}</Project>
-      <Name>Dapper.DB.Repository</Name>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{0cbf942f-64ff-43cf-b876-e04ff7f330fc}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

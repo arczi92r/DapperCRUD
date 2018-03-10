@@ -14,10 +14,6 @@ namespace AutoFacTest
         static void Main(string[] args)
         {
             RegisterDependencies();
-
-            // var query = Assembly.GetCallingAssembly();
-            //  Select(x => x.FullName).FirstOrDefault();
-
             Console.ReadKey();
 
         }
@@ -28,12 +24,8 @@ namespace AutoFacTest
 
             builder.RegisterType<EmailLog>().As<ILog>();
             builder.RegisterType<Engine>();
-
-
-
             Container = builder.Build();
             var user = Container.Resolve<Engine>();
-
             user.Ahead(12);
 
         }

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using DB.Repository;
+using Infrastructure;
 
 namespace ConsoleApp1
 {
@@ -9,24 +10,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string connectionStringArek = @"Data Source=ACER\MSSQLSERVER2016;Initial Catalog=Arek;Integrated Security=true";
-
-            IDbConnection con = null;
-
-            con = new SqlConnection(connectionStringArek);
+            RegisterContainer.RegisterDependenciesServices();
 
 
 
-            SqlConnection sql = Activator.CreateInstance<SqlConnection>();
-            sql.ConnectionString = connectionStringArek;
-
-
-            PersonRepository pr = new PersonRepository(sql);
-            
-            Console.WriteLine(pr.FindByUserID(12).Name);
-            
             Console.ReadKey();
            
         }
     }
+
+    
 }
