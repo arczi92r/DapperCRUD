@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Permission.Repositories;
+using Repositories;
 using Service;
 
 namespace Infrastructure
@@ -10,14 +12,20 @@ namespace Infrastructure
         public static void RegisterDependenciesServices()
         {
             var builder = new ContainerBuilder();
+            builder.Register(x => Mapper.AutoMapperConfig.Initialize()).AsSelf().SingleInstance();
+            builder.RegisterType<FieldRepository>().As<IFieldRepository>().AsSelf();
+            builder.RegisterType<FiledsService>().As<IFiledsService>().AsSelf();
+           
 
-            builder.RegisterType<PersonService>();
-            builder.RegisterModule()
             Container = builder.Build();
             //var user = Container.Resolve<Engine>();
             //user.Ahead(12);
 
         }
-        public stat
+        //private static void RegisterServices(this ContainerBuilder builder)
+        //{
+            
+
+        //}
     }
 }

@@ -5,27 +5,22 @@ using System.Linq;
 using Entity;
 using Dapper;
 using Constans.DBRepo;
+using Domain;
 
 namespace DB.Repository
 {
-    public class PersonRepository : IPersonRepository
+    public class RoleRepository : IPersonRepository
     {
 
         string connectionStringArek =@"Data Source=ACER\MSSQLSERVER2016;Initial Catalog=Arek;Integrated Security=true";
         public IDbConnection Connection = null;
-        //    get
-        //    {
-        //        return
-        //            new SqlConnection(connectionStringArek);
-        //    }
-        //}
-        public PersonRepository(IDbConnection connection)
+        public RoleRepository(IDbConnection connection)
         {
 
             this.Connection = connection;
         }
 
-        public void Add(Person item)
+        public void Add(Role item)
         {
             throw new NotImplementedException();
         }
@@ -35,14 +30,14 @@ namespace DB.Repository
             throw new NotImplementedException();
         }
 
-        public Person FindById(Guid id)
+        public Role FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Person FindByUserID(int personID)
+        public Role FindByUserID(int RoleID)
         {
-            var person = new Person();
+            var role = new Role();
             using (IDbConnection con = Connection)
             {
                 if (con.State == ConnectionState.Closed)

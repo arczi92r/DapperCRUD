@@ -33,9 +33,7 @@
     <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
-    </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -50,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapings\AutoMapperConfig.cs" />
     <Compile Include="RegisterContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,17 +55,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DB.Repository\Dapper.DB.Repository.csproj">
-      <Project>{95e40c5f-a673-450f-94bf-7bb2b3f1d680}</Project>
-      <Name>Dapper.DB.Repository</Name>
+    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
+      <Project>{9c93f472-f173-4e9f-a635-988cd99e8449}</Project>
+      <Name>DataTransferObject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{e53f860a-02e2-4898-8a1b-b68aabef4a7a}</Project>
-      <Name>Model</Name>
+    <ProjectReference Include="..\Mapper\Mapper.csproj">
+      <Project>{fca92782-df55-4f9f-9067-7b49cb73c9f7}</Project>
+      <Name>Mapper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Service\Service.csproj">
+    <ProjectReference Include="..\Permission.Repositories\Permission.Repositories.csproj">
+      <Project>{1CC6BB19-2E64-4BA5-A950-5C3F81B6A366}</Project>
+      <Name>Permission.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories\Permission.IRepositories.csproj">
+      <Project>{8C756DC2-04F3-48E4-8759-8DFFBB823D0D}</Project>
+      <Name>Permission.IRepositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Permission.Service.csproj">
       <Project>{32cfa13e-ea3c-447c-b856-7a3196cc4a02}</Project>
-      <Name>Service</Name>
+      <Name>Permission.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

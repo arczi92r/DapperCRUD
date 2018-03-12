@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using DB.Repository;
+using System.Threading.Tasks;
+using Autofac;
 using Infrastructure;
+using Service;
 
 namespace ConsoleApp1
 {
@@ -10,12 +10,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            RegisterContainer.RegisterDependenciesServices();
-
-
-
-            Console.ReadKey();
+            Init();
            
+               var a = RegisterContainer.Container.Resolve<IFiledsService>();
+
+               var zzz = a.Get();
+               
+
+                Console.ReadKey();
+           
+        }
+        public static void Init() {
+            RegisterContainer.RegisterDependenciesServices();
         }
     }
 
