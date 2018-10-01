@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Autofac;
 using Infrastructure;
 using Service;
@@ -11,19 +10,23 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Init();
-           
-               var a = RegisterContainer.Container.Resolve<IFiledsService>();
 
-               var zzz = a.Get();
-               
+            var filedService = RegisterContainer.Container.Resolve<IFiledsService>();
 
-                Console.ReadKey();
-           
+            var zzz = filedService.GetField(1);
+            Console.WriteLine(zzz.Name);
+
+            //var roleServie = RegisterContainer.Container.Resolve<IRoleService>();
+            //var result = roleServie.GetRole(1);
+
+            Console.ReadKey();
+
         }
-        public static void Init() {
-            RegisterContainer.RegisterDependenciesServices();
+        public static void Init()
+        {
+            RegisterContainer.RegisterDependencies();
         }
     }
 
-    
+
 }

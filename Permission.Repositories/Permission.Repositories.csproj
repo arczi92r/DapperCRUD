@@ -42,8 +42,13 @@
   <ItemGroup>
     <Compile Include="FieldRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DB.Repository\Dapper.DB.Repository.csproj">
+      <Project>{95E40C5F-A673-450F-94BF-7BB2B3F1D680}</Project>
+      <Name>Dapper.DB.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{51869727-A191-46A2-8B32-9C145E0BC14D}</Project>
       <Name>Domain</Name>

@@ -1,9 +1,10 @@
-﻿using Entity;
+﻿using Domain;
+
 
 namespace DB.Repository
 {
-    public interface IPersonRepository : IRepository<Person>
+    public interface IPersonRepository : IRepository<Field>
     {
-        Person FindByUserID(int personID);
+        Field FindByUserID(int personID);
     }
 }

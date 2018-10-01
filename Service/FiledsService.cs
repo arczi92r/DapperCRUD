@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataTransferObject;
@@ -23,18 +22,11 @@ namespace Service
         {
             return new FiedDTO() { Name = "Are", Id = 10 };
         }
-
-        public Task<IEnumerable<FiedDTO>> GetAllFields()
+        public FiedDTO GetField(int id)
         {
-            //var a = _fieldRepository.GetAllFields();
-
-            //return _mapper.Map<IEnumerable<FiedDTO>>(a);
-            throw new System.NotImplementedException();
-        }
-
-        public Task<IEnumerable<FiedDTO>> GetField(int id)
-        {
-            throw new System.NotImplementedException();
+            var a = _fieldRepository.GetFieldByID(id);
+            var x = _mapper.Map<FiedDTO>(a);
+            return x;
         }
 
         public Task<IEnumerable<FiedDTO>> GetField(string name)

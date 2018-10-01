@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRoleService.cs" />
+    <Compile Include="RoleService.cs" />
     <Compile Include="FiledsService.cs" />
     <Compile Include="IFiledsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +66,10 @@
     <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
       <Project>{9c93f472-f173-4e9f-a635-988cd99e8449}</Project>
       <Name>DataTransferObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DB.Repository\Dapper.DB.Repository.csproj">
+      <Project>{95E40C5F-A673-450F-94BF-7BB2B3F1D680}</Project>
+      <Name>Dapper.DB.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{51869727-A191-46A2-8B32-9C145E0BC14D}</Project>

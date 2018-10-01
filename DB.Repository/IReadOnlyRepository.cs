@@ -5,7 +5,7 @@ namespace DB.Repository
 {
     public interface IReadOnlyRepository<T>
     {
-        T FindById(Guid id);
+        T FindById(int id);
 
         IEnumerable<T> GetAll();
     }

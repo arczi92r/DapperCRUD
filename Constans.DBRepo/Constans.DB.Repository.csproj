@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="PersonQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleQuery.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

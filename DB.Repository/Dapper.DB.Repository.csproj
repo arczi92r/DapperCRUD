@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBContext.cs" />
+    <Compile Include="IConnectionFactory.cs" />
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="IReadOnlyRepository.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="RoleRepository.cs" />
+    <Compile Include="FieldRepoDB.cs" />
+    <Compile Include="RoleRepoDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

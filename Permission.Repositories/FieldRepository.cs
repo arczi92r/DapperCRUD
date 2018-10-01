@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DB.Repository;
 using Domain;
 using Repositories;
 
@@ -8,23 +6,16 @@ namespace Permission.Repositories
 {
     public class FieldRepository : IFieldRepository
     {
-        public IEnumerable<Field> GetAllFields()
+        public readonly IRepository<Field> _repo;
+        public FieldRepository(IRepository<Field> repo) //, IMapper mapper)
         {
-            List<Field> aa = new List<Field>();
-            aa.Add(new Field() { Name = "Arej", Id = 10 });
-
-
-            return aa;
+            _repo = repo;
+            //_mapper = mapper;
         }
 
-        public Task<IEnumerable<Field>> GetField(int id)
+        public Field GetFieldByID(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<IEnumerable<Field>> GetField(string name)
-        {
-            throw new System.NotImplementedException();
+            return _repo.FindById(id);
         }
     }
 }
