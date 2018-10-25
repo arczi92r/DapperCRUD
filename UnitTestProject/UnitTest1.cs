@@ -1,4 +1,5 @@
 ﻿
+using ClassLibrary.Test;
 using Xunit;
 
 namespace UnitTestProject
@@ -9,7 +10,17 @@ namespace UnitTestProject
         [Fact]
         public void TestMethod1()
         {
-            Assert.Equal(5, 2);
+            // Arange 
+            int expected = 10;
+
+     
+            //Act
+            Kalkulator k = new Kalkulator();
+           int result =  k.Dodaj(5, 5);
+
+            //Assert
+            Assert.Equal(expected, result);
+            Assert.Equal(3, 3);
         }
        
     }

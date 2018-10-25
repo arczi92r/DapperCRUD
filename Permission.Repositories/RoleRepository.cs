@@ -1,8 +1,6 @@
-﻿
-using DB.Repository;
+﻿using DB.Repository;
 using Domain;
 using Repositories;
-using System;
 
 namespace Permission.Repositories
 {
