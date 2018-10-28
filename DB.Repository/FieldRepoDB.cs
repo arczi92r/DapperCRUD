@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using Constans.DBRepo;
 using Dapper;
@@ -10,15 +9,12 @@ namespace DB.Repository
 {
     public class FieldRepoDB : IRepository<Field>
     {
-
-        //string connectionStringArek = @"Data Source=ACER\MSSQLSERVER2016;Initial Catalog=Arek;Integrated Security=true";
         public IConnectionFactory Connection = null;
         public FieldRepoDB(IConnectionFactory connection)
         {
 
             this.Connection = connection;
         }
-
 
         public void Add(Field item)
         {

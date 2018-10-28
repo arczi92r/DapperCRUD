@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using DataTransferObject;
 using Repositories;
-using System;
 
 namespace Service
 {

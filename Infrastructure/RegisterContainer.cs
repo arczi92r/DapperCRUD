@@ -16,33 +16,52 @@ namespace Infrastructure
         public static void RegisterDependenciesServices()
         {
             builder.RegisterType<FiledsService>().As<IFiledsService>().AsSelf();
-            //builder.RegisterType<RoleService>().As<IRoleService>().AsSelf();
+            builder.RegisterType<RoleService>().As<IRoleService>().AsSelf();
 
         }
         public static void RegisterDependenciesRepository()
         {
             builder.RegisterType<FieldRepository>().As<IFieldRepository>().AsSelf();
-           // builder.RegisterType<RoleRepository>().As<IRoleRepository>().AsSelf();
+            builder.RegisterType<RoleRepository>().As<IRoleRepository>().AsSelf();
 
         }
         public static void RegisterDependencies()
         {
             builder = new ContainerBuilder();
-          
+
+            //Register AutoMappers
             builder.Register(x => Mapper.AutoMapperConfig.Initialize()).AsSelf().SingleInstance();
-            builder.RegisterType<DBContext>().As<IConnectionFactory>().AsImplementedInterfaces().AsSelf()
-            .InstancePerLifetimeScope();
-            //Wyciąganie refleksja 
-        //    builder.RegisterAssemblyTypes(Assembly.Load("DB.Repository"))
-        //.Where(t => t.Name.EndsWith("DB"))
-        //.AsImplementedInterfaces()
-        //.AsSelf()
-        //.InstancePerLifetimeScope();
+
+            // Register DatabaseFactory
+            builder.RegisterType<DBContext>().As<IConnectionFactory>().AsImplementedInterfaces().AsSelf().InstancePerLifetimeScope();
+
+
             builder.RegisterType<FieldRepoDB>().As<IRepository<Field>>().AsSelf();
             RegisterDependenciesRepository();
             RegisterDependenciesServices();
             Container = builder.Build();
         }
 
+        // Rejestrowanie zależnosći poprzez Refleksję , tylko sercvces
+        public static void ReflectionRegisterTypes()
+        {
+            builder = new ContainerBuilder();
+            builder.Register(x => Mapper.AutoMapperConfig.Initialize()).AsSelf().SingleInstance();
+
+            // Register DatabaseFactory
+            builder.RegisterType<DBContext>().As<IConnectionFactory>().AsImplementedInterfaces().AsSelf().InstancePerLifetimeScope();
+            builder.RegisterType<FieldRepoDB>().As<IRepository<Field>>().AsSelf();
+            var repository = Assembly.Load(" Permission.Repositories");
+             // RegisterDependenciesRepository();
+             // RegisterDependenciesServices();
+             var services = Assembly.Load("Service");
+
+
+
+            builder.RegisterAssemblyTypes(services)
+                   .Where(s => s.Name.EndsWith("Service")).AsImplementedInterfaces();
+
+            Container = builder.Build();
+        }
     }
 }

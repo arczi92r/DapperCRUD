@@ -10,17 +10,12 @@ namespace UnitTestProject
         [Fact]
         public void TestMethod1()
         {
+
+            // Napisać test z połaczenim z bazą danych
+       
             // Arange 
-            int expected = 10;
-
-     
-            //Act
-            Kalkulator k = new Kalkulator();
-           int result =  k.Dodaj(5, 5);
-
-            //Assert
-            Assert.Equal(expected, result);
-            Assert.Equal(3, 3);
+            IoCRegistrationTests a = new IoCRegistrationTests();
+            a.ContainerResolveAllTypess();
         }
        
     }

@@ -24,7 +24,9 @@ namespace ConsoleApp1
         }
         public static void Init()
         {
-            RegisterContainer.RegisterDependencies();
+            // RegisterContainer.RegisterDependencies();
+            //Reflection, regiser All Service end wish service 
+            RegisterContainer.ReflectionRegisterTypes();
         }
     }
 

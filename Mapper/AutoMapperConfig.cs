@@ -4,7 +4,7 @@ using Domain;
 
 namespace Mapper
 {
-    public   class AutoMapperConfig
+    public class AutoMapperConfig
     {
         public static IMapper Initialize()
            => new MapperConfiguration(cfg =>
@@ -15,6 +15,5 @@ namespace Mapper
              
            })
            .CreateMapper();
-       
     }
 }
