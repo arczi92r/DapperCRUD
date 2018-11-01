@@ -40,7 +40,7 @@ namespace Infrastructure
             RegisterDependenciesRepository();
             RegisterDependenciesServices();
             Container = builder.Build();
-        }
+        } 
 
         // Rejestrowanie zależnosći poprzez Refleksję , tylko sercvces
         public static void ReflectionRegisterTypes()
